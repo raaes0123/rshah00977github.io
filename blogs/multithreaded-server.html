@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content= 
+		"width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/mediaqueries.css" />
+	<title>Project</title> 
+</head> 
+
+<body>
+    <div style="border-bottom: 3px solid gainsboro;">
+        <nav id="desktop-nav">
+            <div class="logo"><a href="../" style="text-decoration: none;">Rajesh Shah</a></div>
+            <ul class="nav-links">
+                <li><a href="../#about" style="text-decoration: none;">About</a></li>
+                <li><a href="../#projects" style="text-decoration: none;">Projects</a></li>
+                <li><a href="../#blogs" style="text-decoration: none;">Blogs</a></li>
+                <li><a href="../#contact" style="text-decoration: none;">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">Rajesh Shah</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="../#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="../#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="../#blogs" onclick="toggleMenu()">Blogs</a></li>
+                    <li><a href="../#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="project_container" style="margin-left: 2%; margin-top: 0.8%; align-items: center; display: flex; flex-direction: column">  
+        <p style="font-size: xx-large; font-family:Georgia, 'Times New Roman', Times, serif ;margin-top: 1%;">MULTI-THREADED SERVER</p>
+        <p style="font-family:Georgia, 'Times New Roman', Times, serif ;font-size: large; margin: 1%;">February 7, 2025</p>
+        <!--
+        <div class="project_pic_container" style="width: 53%; display: flex; justify-content: center;">
+            <img
+                src="./assets/projects/building-os/building-an-os.png"
+                alt="Emulator IMG"
+            />
+        </div>
+        -->
+        <div class="project_details_container" style=" line-height: 2rem; letter-spacing: 0.08rem; font-family:Georgia, 'Times New Roman', Times, serif; width: 45%; font-size: larger; text-align: justify; text-justify: inter-word;">
+            <p style="margin-top: 2%; margin-bottom: 2%;">
+                The work is in progress. I will update this soon.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <nav>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li><a href="../#about">About</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../#blogs">Blogs</a></li>
+              <li><a href="../#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p>Copyright &#169; 2025 Rajesh Shah. All Rights Reserved.</p>
+      </footer>
+</body>
+
+</html>

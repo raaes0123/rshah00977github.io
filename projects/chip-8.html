@@ -1,0 +1,172 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content= 
+		"width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/mediaqueries.css" />
+	<title>Project</title> 
+</head> 
+
+<body>
+    <div style="border-bottom: 3px solid gainsboro;">
+        <nav id="desktop-nav">
+            <div class="logo"><a href="/" style="text-decoration: none;">Rajesh Shah</a></div>
+            <ul class="nav-links">
+                <li><a href="../#about" style="text-decoration: none;">About</a></li>
+                <li><a href="../#projects" style="text-decoration: none;">Projects</a></li>
+                <li><a href="../#blogs" style="text-decoration: none;">Blogs</a></li>
+                <li><a href="../#contact" style="text-decoration: none;">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">Rajesh Shah</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="../#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="../#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="../#blogs" onclick="toggleMenu()">Blogs</a></li>
+                    <li><a href="../#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="project_container" style="margin-left: 2%; margin-top: 0.8%; align-items: center; display: flex; flex-direction: column">  
+        <p style="font-size: xx-large; font-family:Georgia, 'Times New Roman', Times, serif ;margin-top: 1%;">CHIP-8 EMULATOR</p>
+        <p style="font-family:Georgia, 'Times New Roman', Times, serif ;font-size: large; margin: 1%;">February 7, 2025</p>
+        <div class="project_pic_container" style="width: 53%; display: flex; justify-content: center;">
+            <img
+                src="/assets/projects/chip-8/chip-8-demo.gif"
+                alt="Emulator IMG"
+            />
+        </div>
+        <div class="project_details_container" style=" line-height: 2rem; letter-spacing: 0.08rem; font-family:Georgia, 'Times New Roman', Times, serif; width: 53%; font-size: larger; text-align: justify; text-justify: inter-word;">
+            <p style="font-size: larger; margin-top: 2%; margin-bottom: 2%;">
+                Machine Description
+            </p>
+            <p style=" margin-top: 2%; margin-bottom: 2%;">
+CHIP-8 is an interpreted programming language, developed on an 1802 microprocessor. CHIP-8 was designed to be easy to program for. It was intended as a simpler way to make small programs and games for the computer.
+
+Memory
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+Chip-8 has 4096 (0x1000) memory locations, all of which are 8 bits (a byte) which is where the term CHIP-8 originated. However, the CHIP-8 interpreter itself occupies the first 512 bytes of the memory space on these machines. For this reason, most programs written for the original system begin at memory location 512 (0x200) and do not access any of the memory below the location 512 (0x200). The uppermost 256 bytes (0xF00-0xFFF) are reserved for display refresh, and the 96 bytes below that (0xEA0-0xEFF) were reserved for the call stack, internal use, and other variables.
+</p>
+Registers
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+    CHIP-8 has 16 8-bit data registers named V0 to VF. The VF register doubles as a flag for some instructions; thus, it should be avoided. In an addition operation, VF is the carry flag, while in subtraction, it is the "no borrow" flag. In the draw instruction VF is set upon pixel collision.
+The address register, which is named I, is 12 bits wide and is used with several opcodes that involve memory operations. Program Counter (PC) holds the address of next instruction to be executed.
+</p>
+The stack
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+The stack is only used to store return addresses when subroutines are called. The original RCA 1802 version allocated 48 bytes for up to 12 levels of nesting.
+</p>
+Timers
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+CHIP-8 has two timers. They both count down at 60 hertz, until they reach 0.
+- Delay timer: This timer is intended to be used for timing the events of games. Its value can be set and read.
+- Sound timer: This timer is used for sound effects. When its value is nonzero, a beeping sound is made. Its value can only be set.
+</p>
+Input
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+Input is done with a hex keyboard that has 16 keys ranging 0 to F. The '8', '4', '6', and '2' keys are typically used for directional input. Three opcodes are used to detect input. One skips an instruction if a specific key is pressed, while another does the same if a specific key is not pressed. The third waits for a key press, and then stores it in one of the data registers.
+</p>
+Graphics and sound
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+Original CHIP-8 display resolution is 64×32 pixels, and color is monochrome. Graphics are drawn to the screen solely by drawing sprites, which are 8 pixels wide and may be from 1 to 15 pixels in height. Sprite pixels are XOR'd with corresponding screen pixels. In other words, sprite pixels that are set flip the color of the corresponding screen pixel, while unset sprite pixels do nothing. The carry flag (VF) is set to 1 if any screen pixels are flipped from set to unset when a sprite is drawn and set to 0 otherwise. This is used for collision detection.
+As previously described, a beeping sound is played when the value of the sound timer is nonzero.
+</p>
+Opcode
+<p style=" margin-top: 2%; margin-bottom: 2%;">
+CHIP-8 has 35 opcodes, which are all two bytes long and stored big-endian.
+</p>
+
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    </style>
+
+<table>
+    <thead>
+      <tr>
+        <th>Opcode</th>
+        <th>Type</th>
+        <th>C Pseudo</th>
+        <th>Explanation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>0NNN</td><td>Call</td><td></td><td>Calls machine code routine (RCA 1802 for COSMAC VIP) at address NNN. Not necessary for most ROMs.</td></tr>
+      <tr><td>00E0</td><td>Display</td><td>disp_clear()</td><td>Clears the screen.</td></tr>
+      <tr><td>00EE</td><td>Flow</td><td>return;</td><td>Returns from a subroutine.</td></tr>
+      <tr><td>1NNN</td><td>Flow</td><td>goto NNN;</td><td>Jumps to address NNN.</td></tr>
+      <tr><td>2NNN</td><td>Flow</td><td>*(0xNNN)()</td><td>Calls subroutine at NNN.</td></tr>
+      <tr><td>3XNN</td><td>Cond</td><td>if (Vx == NN)</td><td>Skips the next instruction if VX equals NN.</td></tr>
+      <tr><td>4XNN</td><td>Cond</td><td>if (Vx != NN)</td><td>Skips the next instruction if VX does not equal NN.</td></tr>
+      <tr><td>5XY0</td><td>Cond</td><td>if (Vx == Vy)</td><td>Skips the next instruction if VX equals VY.</td></tr>
+      <tr><td>6XNN</td><td>Const</td><td>Vx = NN</td><td>Sets VX to NN.</td></tr>
+      <tr><td>7XNN</td><td>Const</td><td>Vx += NN</td><td>Adds NN to VX.</td></tr>
+      <tr><td>8XY0</td><td>Assig</td><td>Vx = Vy</td><td>Sets VX to the value of VY.</td></tr>
+      <tr><td>8XY1</td><td>BitOp</td><td>Vx |= Vy</td><td>Sets VX to VX or VY.</td></tr>
+      <tr><td>8XY2</td><td>BitOp</td><td>Vx &= Vy</td><td>Sets VX to VX and VY.</td></tr>
+      <tr><td>8XY3</td><td>BitOp</td><td>Vx ^= Vy</td><td>Sets VX to VX xor VY.</td></tr>
+      <tr><td>8XY4</td><td>Math</td><td>Vx += Vy</td><td>Adds VY to VX. VF is set to 1 when there's an overflow.</td></tr>
+      <tr><td>8XY5</td><td>Math</td><td>Vx -= Vy</td><td>VY is subtracted from VX. VF is set to 1 if VX >= VY.</td></tr>
+      <tr><td>8XY6</td><td>BitOp</td><td>Vx >>= 1</td><td>Shifts VX to the right by 1.</td></tr>
+      <tr><td>8XY7</td><td>Math</td><td>Vx = Vy - Vx</td><td>Sets VX to VY minus VX.</td></tr>
+      <tr><td>8XYE</td><td>BitOp</td><td>Vx <<= 1</td><td>Shifts VX to the left by 1.</td></tr>
+      <tr><td>9XY0</td><td>Cond</td><td>if (Vx != Vy)</td><td>Skips the next instruction if VX does not equal VY.</td></tr>
+      <tr><td>ANNN</td><td>MEM</td><td>I = NNN</td><td>Sets I to the address NNN.</td></tr>
+      <tr><td>BNNN</td><td>Flow</td><td>PC = V0 + NNN</td><td>Jumps to the address NNN plus V0.</td></tr>
+      <tr><td>CXNN</td><td>Rand</td><td>Vx = rand() & NN</td><td>Sets VX to a random number and NN.</td></tr>
+      <tr><td>DXYN</td><td>Display</td><td>draw(Vx, Vy, N)</td><td>Draws a sprite at coordinate (VX, VY).</td></tr>
+      <tr><td>EX9E</td><td>KeyOp</td><td>if (key() == Vx)</td><td>Skips the next instruction if the key stored in VX is pressed.</td></tr>
+      <tr><td>EXA1</td><td>KeyOp</td><td>if (key() != Vx)</td><td>Skips the next instruction if the key stored in VX is not pressed.</td></tr>
+      <tr><td>FX07</td><td>Timer</td><td>Vx = get_delay()</td><td>Sets VX to the value of the delay timer.</td></tr>
+      <tr><td>FX0A</td><td>KeyOp</td><td>Vx = get_key()</td><td>Waits for a key press and stores it in VX.</td></tr>
+      <tr><td>FX15</td><td>Timer</td><td>delay_timer(Vx)</td><td>Sets the delay timer to VX.</td></tr>
+      <tr><td>FX18</td><td>Sound</td><td>sound_timer(Vx)</td><td>Sets the sound timer to VX.</td></tr>
+      <tr><td>FX1E</td><td>MEM</td><td>I += Vx</td><td>Adds VX to I.</td></tr>
+      <tr><td>FX29</td><td>MEM</td><td>I = sprite_addr[Vx]</td><td>Sets I to the sprite location for the character in VX.</td></tr>
+      <tr><td>FX33</td><td>BCD</td><td>set_BCD(Vx)</td><td>Stores the BCD representation of VX in memory.</td></tr>
+      <tr><td>FX55</td><td>MEM</td><td>reg_dump(Vx, &I)</td><td>Stores V0 to VX in memory starting at I.</td></tr>
+      <tr><td>FX65</td><td>MEM</td><td>reg_load(Vx, &I)</td><td>Fills V0 to VX with values from memory starting at I.</td></tr>
+    </tbody>
+  </table>
+        </div>
+    </div>
+    <footer>
+        <nav>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li><a href="../#about">About</a></li>
+              <li><a href="../#projects">Projects</a></li>
+              <li><a href="../#blogs">Blogs</a></li>
+              <li><a href="../#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p>Copyright &#169; 2025 Rajesh Shah. All Rights Reserved.</p>
+      </footer>
+</body>
+
+</html>

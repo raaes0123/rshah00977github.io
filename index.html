@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajesh Shah</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <div>
+      <nav id="desktop-nav">
+          <div class="logo">Rajesh Shah</div>
+          <ul class="nav-links">
+              <li><a href="#about" style="text-decoration: none;">About</a></li>
+              <li><a href="#projects" style="text-decoration: none;">Projects</a></li>
+              <li><a href="#blogs" style="text-decoration: none;">Blogs</a></li>
+              <li><a href="#contact" style="text-decoration: none;">Contact</a></li>
+          </ul>
+      </nav>
+      <nav id="hamburger-nav">
+          <div class="logo">Rajesh Shah</div>
+          <div class="hamburger-menu">
+              <div class="hamburger-icon" onclick="toggleMenu()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+              <div class="menu-links">
+                  <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                  <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                  <li><a href="#blogs" onclick="toggleMenu()">Blogs</a></li>
+                  <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+              </div>
+          </div>
+      </nav>
+    </div>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/front-img.png" alt="Welcome Image" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Rajesh Shah</h1>
+        <p class="section__text__p2">Embedded Software Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/rajesh-shah-1b3b4b19a/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/raaes0123'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/profile/profile-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>5+ years <br />Embedded Software Development</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.E. Bachelors Degree<br />M.Sc. Masters Degree</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p style="text-align: justify; text-justify: inter-word">
+              An Embedded Software Engineer with relevant experience in firmware and embedded system development.
+              Has programming ability in high level languages such as Python, HDL, C, C++ and assembly in embedded 
+              environment and experience with microcontroller environments and familiarity with industry-standard
+              platforms such as x86 and ARM Cortex-M.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#blogs'"
+      />
+    </section>
+    
+  <!---------------------------------PROJECTS---------------------------------------->
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/projects/chip-8/project-1-pic.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title" style="font-size: larger;">Chip-8 Emulator</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/raaes0123/Chip-8-Emulator'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='/projects/chip-8.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/projects/device-driver/linux-device-driver-pic.jpg"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title" style="font-size: larger;">Linux Device Driver</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='projects/linux-device-driver.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/projects/building-os/building-an-os.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title" style="font-size: larger;">Building an OS</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='/projects/building-os.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!---------------------------------BLOGS---------------------------------------->
+    <section id="blogs">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Blogs</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+
+          <div class="details-container color-container" style="min-height: 150px;" >
+            <h2 class="experience-sub-title project-title" style="font-size:larger;">Mutex Class in C++</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./blogs/mutex.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container" style="min-height: 150px;">
+            <h2 class="experience-sub-title project-title" style="font-size:larger;">Multi-threaded Work Queue</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./blogs/multithreaded-work-queue.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container" style="min-height: 150px;">
+            <h2 class="experience-sub-title project-title" style="font-size:larger;">TCP/IP Network Programming</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./blogs/tcp-ip.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container" style="min-height: 150px;">
+            <h2 class="experience-sub-title project-title" style="font-size:larger;">Multi-threaded Server</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./blogs/multithreaded-server.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        <div class="about-containers">
+
+          <div class="details-container color-container" style="min-height: 150px; max-width: 14rem;" >
+            <h2 class="experience-sub-title project-title" style="font-size:larger;">Mutex</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='chip-8.html'"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>  
+        -->
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:shahrajesh00977@gmail.com">shahrajesh00977@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/rajesh-shah-1b3b4b19a/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2025 Rajesh Shah. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
