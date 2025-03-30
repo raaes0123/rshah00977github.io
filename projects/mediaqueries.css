@@ -100,5 +100,11 @@
   .text-container {
     text-align: justify;
   }
+  .project-container {
+    width: fit-content;
+  }
+  .project-details-container {
+    width: 80%;
+  }
 }
 
