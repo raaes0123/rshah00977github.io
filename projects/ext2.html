@@ -5,8 +5,8 @@
 	<meta charset="UTF-8"> 
 	<meta name="viewport" content= 
 		"width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/mediaqueries.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
 	<title>Project</title> 
 </head> 
 
@@ -38,19 +38,24 @@
             </div>
         </nav>
     </div>
-
-    <div id="project_container" style="margin-left: 2%; margin-top: 0.8%; align-items: center; display: flex; flex-direction: column">  
-        <p style="font-size: xx-large; font-family:Georgia, 'Times New Roman', Times, serif ;margin-top: 1%;">BUILDING AN OPERATING SYSTEM</p>
-        <p style="font-family:Georgia, 'Times New Roman', Times, serif ;font-size: large; margin: 1%;">February 7, 2025</p>
-        <div class="project_pic_container" style="width: 53%; display: flex; justify-content: center;">
-            <img
-                src="/assets/projects/building-os/building-an-os.png"
-                alt="OS IMG"
+    <!--<div id="project_container" style="margin-left: 2%; margin-top: 0.8%; align-items: center; display: flex; flex-direction: column">-->  
+    <div class="project-container">
+      <div class="project-title"><p>EXT2 File Parser</p></div>
+        <!--<p style="font-family:Georgia, 'Times New Roman', Times, serif ;font-size: large; margin: 1%;">February 7, 2025</p>-->
+        <p class= "date-container">February 7, 2025</p>
+        <!--<div class="project_pic_container" style="width: 53%; display: flex; justify-content: center;">-->
+        <div class="project-pic-container">
+          <img
+                src="/assets/projects/ext2/ext2.png"
+                alt="EXT2 IMG"
             />
         </div>
-        <div class="project_details_container" style=" line-height: 2rem; letter-spacing: 0.08rem; font-family:Georgia, 'Times New Roman', Times, serif; width: 45%; font-size: larger; text-align: justify; text-justify: inter-word;">
-            <p style="margin-top: 2%; margin-bottom: 2%;">
-                The work is in progress. I will update this soon.
+        <div class="project-details-container">
+            <p style="font-size: larger;">
+                Mutex
+            </p>
+            <p>
+                Mutex short for mutual exclusion is a synchronization primitive that allows access to shared resource to only one thread.
             </p>
         </div>
     </div>
