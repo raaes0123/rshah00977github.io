@@ -3,8 +3,9 @@ from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
 
 code = '''
-Total garlic count is: 156226
-Total garlic count should be: 200000
+void main(){
+    while(1);
+}
 '''
 
 formatter = HtmlFormatter(style="friendly", full=True, linenos=True)

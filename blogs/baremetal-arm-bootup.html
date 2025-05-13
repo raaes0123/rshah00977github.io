@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../projects/style.css" />
+    <link rel="stylesheet" href="../projects/media.css" />
+    <title>Baremetal ARM Boot Up</title>
+</head>
+
+<body>
+    <div style="border-bottom: 3px solid gainsboro;">
+        <nav id="desktop-nav">
+            <div class="logo"><a href="/" style="text-decoration: none;">Rajesh Shah</a></div>
+            <ul class="nav-links">
+                <li><a href="../#about" style="text-decoration: none;">About</a></li>
+                <li><a href="../#projects" style="text-decoration: none;">Projects</a></li>
+                <li><a href="../#blogs" style="text-decoration: none;">Blogs</a></li>
+                <li><a href="../#contact" style="text-decoration: none;">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">Rajesh Shah</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="../#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="../#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="../#blogs" onclick="toggleMenu()">Blogs</a></li>
+                    <li><a href="../#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--<div id="project_container" style="margin-left: 2%; margin-top: 0.8%; align-items: center; display: flex; flex-direction: column">-->
+    <div class="project-container">
+        <div class="project-title">
+            <p>Baremetal ARM Boot Up</p>
+        </div>
+        <!--<p style="font-family:Georgia, 'Times New Roman', Times, serif ;font-size: large; margin: 1%;">February 7, 2025</p>-->
+        <p class="date-container">May 8, 2025</p>
+        <!--<div class="project_pic_container" style="width: 53%; display: flex; justify-content: center;">-->
+        <div class="project-pic-container">
+            <img src="/assets/blogs/arm.png" alt="MUTEX IMG" />
+        </div>
+        <div class="project-details-container">
+            <p>
+                The blog aims at describing baremetal bootup process of ARM processor using QEMU a generic open source machine emulator.
+            </p>
+            <p>
+                The goal is to discover what boot process goes on behind the scene even before we jump to the main. In order to go through each of the steps
+                no IDE or SDK is used. We write our own linker script and startup assembly code that jumps into the main C code.
+            </p>
+            <p>
+                I am using VSCode editor for writing the code and arm-none-eabi-gcc ARM compiler. To implement the code instead of using 
+                a hardware QEMU emulator is used to emulate a arm CPU particularly stm32 discovery board. Additionally a gdb debugger is 
+                used to go through the instructions.
+            </p>
+
+            <p>
+               We start with the main.c function that does nothing and stays in a while loop. 
+            </p>
+    
+    <div class="code_body">
+    <pre>
+
+    <span></span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+    <span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    </pre>
+    </div>
+    <p>
+        But how does the control reach to the main function? 
+    </p>
+    
+    Startup Code (startup.s)
+    <div class="code_body">
+    <pre>
+
+    <span class="p">.</span><span class="n">section</span><span class="w"> </span><span class="p">.</span><span class="n">vectors</span>
+    <span class="w">    </span><span class="p">.</span><span class="n">word</span><span class="w"> </span><span class="n">_stack_top</span><span class="w">      </span><span class="c1">// initial SP</span>
+    <span class="w">    </span><span class="p">.</span><span class="n">word</span><span class="w"> </span><span class="n">reset_handler</span><span class="w">   </span><span class="c1">// reset vector</span>
+    
+    <span class="p">.</span><span class="n">section</span><span class="w"> </span><span class="p">.</span><span class="n">text</span>
+    <span class="p">.</span><span class="n">global</span><span class="w"> </span><span class="n">reset_handler</span>
+    <span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="n">reset_handler</span><span class="p">,</span><span class="w"> </span><span class="o">%</span><span class="n">function</span>
+    
+    <span class="nl">reset_handler</span><span class="p">:</span>
+    <span class="w">    </span><span class="n">bl</span><span class="w"> </span><span class="n">main</span><span class="w">        </span><span class="c1">// call C function</span>
+    
+    </pre>
+    </div>
+
+    <p>
+        The startup.s file above plays a crucial role in setting up the system before handling the control to the main.
+        The first word defined in the code memory under vectors section points to the stack memory and the second to the reset_handler.
+        The stack pointer points to the top of the stack. But more importantly the reset_handler points to the code we
+        want the processor to run (eventually the main function). The reset_handler is defined as a function under text
+        section and it branches to the main function (bl main).
+    </p>
+
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../#projects">Projects</a></li>
+                    <li><a href="../#blogs">Blogs</a></li>
+                    <li><a href="../#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2025 Rajesh Shah. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
