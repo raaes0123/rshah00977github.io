@@ -289,6 +289,12 @@ section {
   border-radius: 2rem;
 }
 
+.text-container{
+  text-align: justify;
+  text-justify: inter-word;
+  padding: auto;
+}
+
 .arrow {
   position: absolute;
   right: -5rem;
@@ -344,7 +350,7 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
-  height: 200px;
+  height: 180px;
   width: 300px;
 }
 
